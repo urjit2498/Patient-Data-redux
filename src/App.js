@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import AdmitForm from './components/admitUser/AdmitForm';
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
 
-function App() {
+import Navbar from './components/layout/Navbar';
+import Chart from './components/admitUser/Chart';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Fragment>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={AdmitForm} />
+            <Route exact path='/chart' component={Chart} />
+          </Switch>
+        </Fragment>
+      </BrowserRouter>
+    </Provider>
   );
-}
+};
 
 export default App;
