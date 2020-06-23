@@ -82,7 +82,7 @@ const UserDetails = (props) => {
     });
   }, [props.addPatient]);
 
-  const { name, date, disease, treatement, status, id } = formData;
+  const { date, treatement, status, id } = formData;
   let [pid, setPid] = useState(id);
 
   const [open, setOpen] = React.useState(false);
@@ -123,7 +123,7 @@ const UserDetails = (props) => {
   const data = props.addPatient.addPatient || null;
   return (
     <Fragment>
-      <h1 className='text-center' style={{ marginTop: '15px' }}>
+      <h1 className='text-center' style={{ marginTop: '100px' }}>
         {' '}
         Patient Details
       </h1>

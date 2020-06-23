@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import Navbar from './components/layout/Navbar';
-import Chart from './components/admitUser/Chart';
+import Chart from './components/admitUser/BarChart';
 
 const App = () => {
   return (
